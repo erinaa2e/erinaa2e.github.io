@@ -1,0 +1,823 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Portofolio Erinna Dian</title>
+    <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet" />
+    <script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        scroll-behavior: smooth;
+        font-family: "Poppins", sans-serif;
+      }
+
+      body {
+        color: #ededed;
+        background: #081b29;
+      }
+
+      header {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        padding: 20px 10%;
+        background: #081b29;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        z-index: 100;
+      }
+
+      .logo {
+        position: relative;
+        font-size: 25px;
+        color: #fff;
+        text-decoration: none;
+        font-weight: 600;
+        cursor: default;
+        opacity: 0;
+        animation: slideRight 1s ease forwards;
+      }
+
+      .navbar a {
+        display: inline-block;
+        font-size: 20px;
+        color: #fff;
+        text-decoration: none;
+        font-weight: 500;
+        margin-left: 30px;
+        transition: 0.3s;
+        opacity: 0;
+        animation: slideTop 0.5s ease forwards;
+        animation-delay: calc(0.2s * var(--i));
+      }
+
+      .navbar a:hover {
+        color: #0ef;
+      }
+
+      .home {
+        position: relative;
+        margin-top: 16px;
+        width: 100%;
+        background: url("download.jpg") no-repeat center center;
+        background-size: cover;
+        height: 100vh;
+        display: flex;
+        justify-content: left;
+        align-items: center;
+        padding: 70px 10% 0;
+      }
+
+      .home-content {
+        max-width: 600px;
+        padding: 20px;
+      }
+
+      .home-content h3 {
+        font-size: 28px;
+        font-weight: 700;
+        opacity: 0;
+        animation: slideBottom 1s ease forwards;
+        animation-delay: 0.7s;
+      }
+
+      .home-content h3:nth-of-type(2) {
+        margin-bottom: 30px;
+        animation: slideTop 1s ease forwards;
+        animation-delay: 0.7s;
+      }
+
+      .home-content h1 {
+        font-size: 49px;
+        font-weight: 700;
+        margin: -3px 0;
+        opacity: 0;
+        animation: slideRight 1s ease forwards;
+        animation-delay: 1s;
+      }
+
+      .home-content p {
+        font-size: 18px;
+        opacity: 0;
+        animation: slideLeft 1s ease forwards;
+        animation-delay: 1s;
+      }
+
+      .home-sci a {
+        display: inline-flex;
+        justify-content: center;
+        align-items: center;
+        width: 40px;
+        height: 40px;
+        background: transparent;
+        border: 2px solid #0ef;
+        border-radius: 50%;
+        font-size: 20px;
+        color: #0ef;
+        text-decoration: none;
+        transition: 0.5s ease;
+        opacity: 0;
+        animation: slideLeft 1s ease forwards;
+        animation-delay: calc(0.2s * var(--i));
+        margin: 30px 15px 30px 0;
+      }
+
+      .home-sci a:hover {
+        background: #0ef;
+        color: #081b29;
+        box-shadow: 0 0 20px #0ef;
+      }
+
+      .btn-box {
+        display: inline-block;
+        padding: 12px 28px;
+        background: #0ef;
+        border-radius: 40px;
+        font-size: 16px;
+        color: #081b29;
+        letter-spacing: 1px;
+        text-decoration: none;
+        font-weight: 600;
+        opacity: 0;
+        animation: slideTop 1s ease forwards;
+        animation-delay: 2s;
+        box-shadow: 0 0 5px #0ef, 0 0 25px #0ef;
+        transition: all 0.3s ease;
+      }
+
+      .btn-box:hover {
+        box-shadow: 0 0 5px cyan, 0 0 25px cyan, 0 0 50px cyan, 0 0 100px cyan, 0 0 200px cyan;
+        transform: translateY(-3px);
+      }
+
+      /* About Section - Perbaikan untuk rasio 3:4 */
+      .about {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        align-items: center;
+        gap: 3rem;
+        padding: 100px 10%;
+      }
+
+      .about-img {
+        position: relative;
+        width: 100%;
+        padding-top: 133.33%; /* Rasio 3:4 (4/3*100) */
+        overflow: hidden;
+        border-radius: 8px;
+      }
+
+      .about-img img {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        border-radius: 8px;
+      }
+
+      .about-text {
+        padding: 20px;
+      }
+
+      .about-text h2 {
+        font-size: 48px;
+        margin-bottom: 20px;
+      }
+
+      .about-text h2 span {
+        color: #0ef;
+      }
+
+      .about-text h4 {
+        font-size: 22px;
+        font-weight: 600;
+        color: #fff;
+        margin: 15px 0 20px;
+      }
+
+      .about-text p {
+        color: aliceblue;
+        font-size: 18px;
+        line-height: 1.6;
+        margin-bottom: 30px;
+      }
+
+      /* Project Section - Perbaikan untuk 2 baris dengan ukuran sama */
+      #project {
+        padding: 100px 5%;
+      }
+
+      .main-text {
+        text-align: center;
+        margin-bottom: 60px;
+      }
+
+      .main-text h2 {
+        font-size: 48px;
+        line-height: 1.2;
+      }
+
+      .main-text h2 span {
+        color: #0ef;
+      }
+
+      .portfolio-content {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 30px;
+        max-width: 1200px;
+        margin: 0 auto;
+      }
+
+      .row {
+        position: relative;
+        overflow: hidden;
+        border-radius: 10px;
+        cursor: pointer;
+        aspect-ratio: 4/3;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+        transition: all 0.3s ease;
+      }
+
+      .row:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 15px 30px rgba(0, 238, 255, 0.2);
+      }
+
+      .row img {
+        width: 100%;
+        height: 100%;
+        display: block;
+        object-fit: cover;
+        border-radius: 8px;
+        transition: transform 0.5s ease;
+      }
+
+      .layer {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(rgba(0, 0, 0, 0.7), #00eeff);
+        border-radius: 8px;
+        left: 0;
+        bottom: 0;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        padding: 20px;
+        opacity: 0;
+        transition: opacity 0.5s;
+      }
+
+      .layer h5 {
+        color: #fff;
+        font-size: 24px;
+        font-weight: 600;
+        margin-bottom: 15px;
+      }
+
+      .layer p {
+        color: #fff;
+        font-size: 16px;
+        line-height: 1.6;
+      }
+
+      .layer i {
+        color: #fff;
+        margin-top: 20px;
+        font-size: 24px;
+        background: rgba(255, 255, 255, 0.2);
+        width: 50px;
+        height: 50px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 50%;
+        transition: all 0.3s ease;
+      }
+
+      .layer i:hover {
+        background: #fff;
+        color: #0ef;
+        transform: scale(1.1);
+      }
+
+      .row:hover img {
+        transform: scale(1.1);
+      }
+
+      .row:hover .layer {
+        opacity: 1;
+      }
+
+      /* Contact Section */
+      .contact {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        align-items: center;
+        gap: 3rem;
+        padding: 100px 5%;
+      }
+
+      .contact-text {
+        padding: 20px;
+      }
+
+      .contact-text h2 {
+        font-size: 48px;
+        line-height: 1.2;
+        margin-bottom: 20px;
+      }
+
+      .contact-text h2 span {
+        color: #0ef;
+      }
+
+      .contact-text h4 {
+        margin: 15px 0;
+        color: rgb(228, 228, 228);
+        font-weight: 600;
+        font-size: 22px;
+      }
+
+      .contact-text p {
+        color: rgb(177, 177, 177);
+        font-size: 18px;
+        line-height: 1.6;
+        margin-bottom: 2rem;
+      }
+
+      .contact-list {
+        margin-bottom: 2rem;
+      }
+
+      .contact-list li {
+        margin-bottom: 15px;
+        display: flex;
+        align-items: center;
+        font-size: 18px;
+      }
+
+      .contact-list i {
+        display: inline-block;
+        color: #0ef;
+        font-size: 24px;
+        margin-right: 10px;
+        transition: all 0.3s ease;
+      }
+
+      .contact-icons {
+        display: flex;
+        gap: 15px;
+      }
+
+      .contact-icons a {
+        display: inline-flex;
+        justify-content: center;
+        align-items: center;
+        width: 50px;
+        height: 50px;
+        background: transparent;
+        border: 2px solid #0ef;
+        border-radius: 50%;
+        font-size: 24px;
+        color: #0ef;
+        text-decoration: none;
+        transition: 0.5s ease;
+      }
+
+      .contact-icons a:hover {
+        background: #0ef;
+        color: #081b29;
+        box-shadow: 0 0 20px #0ef;
+        transform: translateY(-5px);
+      }
+
+      .contact-form form {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+      }
+
+      .contact-form form input,
+      .contact-form form textarea {
+        border: none;
+        outline: none;
+        width: 100%;
+        padding: 18px;
+        background: #2d2d30;
+        color: #fff;
+        font-size: 16px;
+        font-weight: 500;
+        border-radius: 8px;
+        transition: all 0.3s ease;
+      }
+
+      .contact-form form input:focus,
+      .contact-form form textarea:focus {
+        box-shadow: 0 0 10px #0ef;
+      }
+
+      .contact-form textarea {
+        resize: none;
+        height: 200px;
+      }
+
+      .contact-form form .send {
+        display: inline-block;
+        padding: 14px 60px;
+        background: #0ef;
+        border-radius: 40px;
+        font-size: 16px;
+        color: #081b29;
+        letter-spacing: 1px;
+        text-decoration: none;
+        font-weight: 600;
+        border: none;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        align-self: flex-start;
+        box-shadow: 0 0 5px #0ef, 0 0 25px #0ef;
+      }
+
+      .contact-form form .send:hover {
+        box-shadow: 0 0 5px cyan, 0 0 25px cyan, 0 0 50px cyan, 0 0 100px cyan, 0 0 200px cyan;
+        transform: translateY(-3px);
+      }
+
+      /* Footer */
+      .last-text {
+        text-align: center;
+        padding: 25px 0;
+        background: rgba(7, 85, 91, 0.7);
+        font-size: 16px;
+        font-weight: 300;
+      }
+
+      .last-text p {
+        color: #fff;
+      }
+
+      .top {
+        position: fixed;
+        bottom: 30px;
+        right: 30px;
+        z-index: 99;
+      }
+
+      .top i {
+        color: #000;
+        background: #0ef;
+        padding: 12px;
+        border-radius: 50%;
+        font-size: 20px;
+        transition: all 0.3s ease;
+      }
+
+      .top i:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 0 15px #0ef;
+      }
+
+      /* Animations */
+      @keyframes slideRight {
+        0% {
+          transform: translateX(-100px);
+          opacity: 0;
+        }
+        100% {
+          transform: translateX(0);
+          opacity: 1;
+        }
+      }
+
+      @keyframes slideLeft {
+        0% {
+          transform: translateX(100px);
+          opacity: 0;
+        }
+        100% {
+          transform: translateX(0);
+          opacity: 1;
+        }
+      }
+
+      @keyframes slideTop {
+        0% {
+          transform: translateY(100px);
+          opacity: 0;
+        }
+        100% {
+          transform: translateY(0);
+          opacity: 1;
+        }
+      }
+
+      @keyframes slideBottom {
+        0% {
+          transform: translateY(-100px);
+          opacity: 0;
+        }
+        100% {
+          transform: translateY(0);
+          opacity: 1;
+        }
+      }
+
+      /* Responsive Design */
+      @media (max-width: 992px) {
+        .about {
+          grid-template-columns: 1fr;
+          padding: 80px 5%;
+        }
+
+        .about-img {
+          max-width: 400px;
+          margin: 0 auto;
+        }
+
+        .portfolio-content {
+          grid-template-columns: 1fr;
+          max-width: 600px;
+        }
+
+        .contact {
+          grid-template-columns: 1fr;
+          padding: 80px 5%;
+        }
+
+        .contact-text,
+        .contact-form {
+          text-align: center;
+        }
+
+        .contact-icons {
+          justify-content: center;
+        }
+
+        .contact-form form .send {
+          align-self: center;
+        }
+      }
+
+      @media (max-width: 768px) {
+        header {
+          padding: 15px 5%;
+        }
+
+        .navbar a {
+          font-size: 18px;
+          margin-left: 20px;
+        }
+
+        .home-content h1 {
+          font-size: 40px;
+        }
+
+        .home-content h3 {
+          font-size: 24px;
+        }
+
+        .home-content p {
+          font-size: 16px;
+        }
+
+        .about-text h2 {
+          font-size: 40px;
+        }
+
+        .main-text h2 {
+          font-size: 40px;
+        }
+
+        .contact-text h2 {
+          font-size: 40px;
+        }
+      }
+
+      @media (max-width: 576px) {
+        .navbar a {
+          font-size: 16px;
+          margin-left: 15px;
+        }
+
+        .home-content h1 {
+          font-size: 32px;
+        }
+
+        .home-content h3 {
+          font-size: 20px;
+        }
+
+        .about-text h2 {
+          font-size: 32px;
+        }
+
+        .about-text h4 {
+          font-size: 20px;
+        }
+
+        .about-text p {
+          font-size: 16px;
+        }
+
+        .main-text h2 {
+          font-size: 32px;
+        }
+
+        .contact-text h2 {
+          font-size: 32px;
+        }
+
+        .contact-text h4 {
+          font-size: 20px;
+        }
+
+        .contact-text p {
+          font-size: 16px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header class="header">
+      <a href="#" class="logo">Portofolio</a>
+      <nav class="navbar">
+        <a href="#home" style="--i: 1" class="active">Home</a>
+        <a href="#about" style="--i: 2">About</a>
+        <a href="#project" style="--i: 4">Project</a>
+        <a href="#contact" style="--i: 5">Contact</a>
+      </nav>
+    </header>
+
+    <section class="home" id="home">
+      <div class="home-content">
+        <h3>Hello, It's Me</h3>
+        <h1>Erinna Dian</h1>
+        <h3>And I am a <span class="text">Creative Designer</span></h3>
+        <p>I am a student at State Vocational School 5 Malang with a passion for photography and design.</p>
+        <div class="home-sci">
+          <a href="https://www.instagram.com/einaankr?utm_source=qr" style="--i: 7"><i class="bx bxl-instagram"></i></a>
+          <a href="https://wa.me/+6287736799070" style="--i: 8"><i class="bx bxl-whatsapp"></i></a>
+          <a href="https://www.tiktok.com/@einaankr?is_from_webapp=1&sender_device=pc" style="--i: 9"><i class="bx bxl-tiktok"></i></a>
+        </div>
+        <a href="#about" class="btn-box">More About Me</a>
+      </div>
+    </section>
+
+    <section class="about" id="about">
+      <div class="about-img">
+        <img src="img/pp.jpg" alt="Erinna Dian" />
+      </div>
+      <div class="about-text">
+        <h2>About <span>Me</span></h2>
+        <h4>Erinna Dian Kristianti</h4>
+        <p>Hi! I'm Erinna Dian Kristianti, a vocational high school student from Malang, East Java, Indonesia. I aspire to be a professional programmer and photographer, but I'm still in the process of achieving that.</p>
+        <p>
+          I'm very happy if there's a photography competition because I've always loved taking photos of random things and the results are beautiful. I also enjoy editing photos and videos, and I enjoy listening to music because music is
+          usually what calms my mind.
+        </p>
+        <a href="#contact" class="btn-box">Contact Me</a>
+      </div>
+    </section>
+
+    <section id="project">
+      <div class="main-text">
+        <h2>Latest <span>Projects</span></h2>
+      </div>
+
+      <div class="portfolio-content">
+        <!-- Baris pertama -->
+        <div class="row">
+          <img src="img/pj4.jpg" alt="Project 1" />
+          <div class="layer">
+            <h5>Login html</h5>
+            <p>Gambar ini adalah contoh login menggunakan html dan css</p>
+            <a href="#"><i class="bx bx-link-external"></i></a>
+          </div>
+        </div>
+
+        <div class="row">
+          <img src="img/pj1.jpg" alt="Project 2" />
+          <div class="layer">
+            <h5>Toko Makanan</h5>
+            <p>Gambar ini adalah contoh tampilan di shoope food menggunakan bootstrap</p>
+            <a href="#"><i class="bx bx-link-external"></i></a>
+          </div>
+        </div>
+
+        <!-- Baris kedua -->
+        <div class="row">
+          <img src="img/pj2.jpg" alt="Project 3" />
+          <div class="layer">
+            <h5>Inventaris Film</h5>
+            <p>Gambar ini adalah contoh tampilan seperti di bioskop.</p>
+            <a href="#"><i class="bx bx-link-external"></i></a>
+          </div>
+        </div>
+
+        <div class="row">
+          <img src="img/pj3.jpg" alt="Project 4" />
+          <div class="layer">
+            <h5>Kalkulator</h5>
+            <p>Gambar ini adalah kalkulator membuatnya di thunkable.</p>
+            <a href="#"><i class="bx bx-link-external"></i></a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="contact" id="contact">
+      <div class="contact-text">
+        <h2>Contact <span>Me</span></h2>
+        <h4>let's support each other</h4>
+        <p>Thank you for visiting my portfolio. I hope you enjoy my work. If you have any questions, please contact me.</p>
+        <ul class="contact-list">
+          <li><i class="bx bxs-envelope"></i> erinnadiankristianti@gmail.com</li>
+          <li><i class="bx bxs-phone"></i> 087736799070</li>
+        </ul>
+        <div class="contact-icons">
+          <a href="https://www.instagram.com/einaankr?utm_source=qr"><i class="bx bxl-instagram"></i></a>
+          <a href="https://wa.me/+6287736799070"><i class="bx bxl-whatsapp"></i></a>
+          <a href="https://www.tiktok.com/@einaankr?is_from_webapp=1&sender_device=pc"><i class="bx bxl-tiktok"></i></a>
+        </div>
+      </div>
+
+      <div class="contact-form">
+        <form action="">
+          <input type="text" placeholder="Enter Your Name" required />
+          <input type="email" placeholder="Enter Your Email" required />
+          <input type="text" placeholder="Enter Your Subject" />
+          <textarea placeholder="Enter Your Message" required></textarea>
+          <input type="submit" value="Submit" class="send" />
+        </form>
+      </div>
+    </section>
+
+    <div class="last-text">
+      <p>Developed with ❤ by Erinna Dian</p>
+    </div>
+
+    <a href="#" class="top"><i class="bx bx-up-arrow-alt"></i></a>
+
+    <script>
+      // Typing animation
+      document.addEventListener("DOMContentLoaded", function () {
+        const typed = new Typed(".text", {
+          strings: ["Photographer", "Designer", "Content Creator", "Student"],
+          typeSpeed: 100,
+          backSpeed: 100,
+          backDelay: 1000,
+          loop: true,
+        });
+
+        // Smooth scrolling
+        document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
+          anchor.addEventListener("click", function (e) {
+            e.preventDefault();
+            const targetId = this.getAttribute("href");
+            const targetElement = document.querySelector(targetId);
+
+            if (targetElement) {
+              window.scrollTo({
+                top: targetElement.offsetTop,
+                behavior: "smooth",
+              });
+            }
+          });
+        });
+
+        // Scroll to top button visibility
+        window.addEventListener("scroll", function () {
+          const topBtn = document.querySelector(".top");
+          if (window.pageYOffset > 300) {
+            topBtn.style.opacity = "1";
+            topBtn.style.visibility = "visible";
+          } else {
+            topBtn.style.opacity = "0";
+            topBtn.style.visibility = "hidden";
+          }
+        });
+
+        // Scroll to top functionality
+        document.querySelector(".top").addEventListener("click", function (e) {
+          e.preventDefault();
+          window.scrollTo({
+            top: 0,
+            behavior: "smooth",
+          });
+        });
+      });
+    </script>
+  </body>
+</html>
