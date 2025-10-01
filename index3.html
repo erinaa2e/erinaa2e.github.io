@@ -9,91 +9,165 @@
     <!-- AOS CSS -->
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
     <!-- EMAIL JS -->
-     <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
     <style>
-     html {
-  scroll-behavior: smooth;
-}
-body {
-  font-family: "Segoe UI", sans-serif;
-  background: linear-gradient(135deg, #8f4509be, rgba(165, 42, 42, 0.205)); /* gradasi coklat elegan */
-  color: #2c2c2c;
-}
-.carousel-item {
-  height: 80vh;
-  min-height: 400px;
-  background: no-repeat center center/cover;
-  position: relative;
-}
-.carousel-caption {
-  bottom: 20%;
-  z-index: 10;
-}
-.carousel-caption h1 {
-  font-size: 3rem;
-  font-weight: bold;
-  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
-}
-.about img {
-  border-radius: 10px;
-}
-footer {
-  background: #4e342e; /* coklat tua */
-  color: white;
-  padding: 20px 0;
-  text-align: center;
-}
+      html {
+        scroll-behavior: smooth;
+      }
+      body {
+        font-family: "Segoe UI", sans-serif;
+        background: linear-gradient(135deg, #8f4509be, rgba(165, 42, 42, 0.205)); /* gradasi coklat elegan */
+        color: #2c2c2c;
+      }
+      .carousel-item {
+        height: 80vh;
+        min-height: 400px;
+        background: no-repeat center center/cover;
+        position: relative;
+      }
+      .carousel-caption {
+        bottom: 20%;
+        z-index: 10;
+      }
+      .carousel-caption h1 {
+        font-size: 3rem;
+        font-weight: bold;
+        text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
+      }
+      .about img {
+        border-radius: 10px;
+      }
+      footer {
+        background: #4e342e; /* coklat tua */
+        color: white;
+        padding: 20px 0;
+        text-align: center;
+      }
 
-/* gallery */
-.card-img-top {
-  object-fit: cover;
-  height: 240px;
-}
-@media (max-width: 768px) {
-  .card-img-top {
-    height: 160px;
-  }
-}
+      /* gallery */
+      .card-img-top {
+        object-fit: cover;
+        height: 240px;
+      }
+      @media (max-width: 768px) {
+        .card-img-top {
+          height: 160px;
+        }
+      }
 
-.filter-btns .btn {
-  margin-right: 6px;
-  margin-bottom: 8px;
-}
-.hidden {
-  display: none !important;
-}
+      .filter-btns .btn {
+        margin-right: 6px;
+        margin-bottom: 8px;
+      }
+      .hidden {
+        display: none !important;
+      }
 
-/* modal image viewer */
-.img-modal .modal-dialog {
-  max-width: 900px;
-}
-.img-modal img {
-  width: 100%;
-  height: auto;
-  display: block;
-}
+      /* modal image viewer */
+      .img-modal .modal-dialog {
+        max-width: 900px;
+      }
+      .img-modal img {
+        width: 100%;
+        height: auto;
+        display: block;
+      }
 
-/* small styling for sections */
-section {
-  padding-top: 40px;
-  padding-bottom: 40px;
-  background: rgba(255, 255, 255, 0.8); /* semi transparan biar elegan */
-  border-radius: 12px;
-  margin-bottom: 20px;
-}
- .carousel-caption {
-      bottom: 20%;
-      z-index: 10;
-      background: rgba(0, 0, 0, 0.5); /* hitam transparan */
-      padding: 20px;
-      border-radius: 10px;
-    }
+      /* small styling for sections */
+      section {
+        padding-top: 40px;
+        padding-bottom: 40px;
+        background: rgba(255, 255, 255, 0.8); /* semi transparan biar elegan */
+        border-radius: 12px;
+        margin-bottom: 20px;
+      }
+      .carousel-caption {
+        bottom: 20%;
+        z-index: 10;
+        background: rgba(0, 0, 0, 0.5); /* hitam transparan */
+        padding: 20px;
+        border-radius: 10px;
+      }
 
-    .carousel-caption h1, 
-    .carousel-caption p {
-      color: #fff; /* supaya kontras */
-    }
+      .carousel-caption h1,
+      .carousel-caption p {
+        color: #fff; /* supaya kontras */
+      }
 
+      /* Timeline Sejarah */
+      .timeline {
+        position: relative;
+        margin: 40px 0;
+      }
+      .timeline::after {
+        content: "";
+        position: absolute;
+        width: 6px;
+        background: #4e342e;
+        top: 0;
+        bottom: 0;
+        left: 50%;
+        margin-left: -3px;
+      }
+      .timeline-item {
+        padding: 20px;
+        position: relative;
+        width: 50%;
+      }
+      .timeline-item.left {
+        left: 0;
+      }
+      .timeline-item.right {
+        left: 50%;
+      }
+      .timeline-item::before {
+        content: " ";
+        position: absolute;
+        top: 30px;
+        width: 20px;
+        height: 20px;
+        background: white;
+        border: 4px solid #4e342e;
+        border-radius: 50%;
+        z-index: 1;
+      }
+      .timeline-item.left::before {
+        right: -10px;
+      }
+      .timeline-item.right::before {
+        left: -10px;
+      }
+      .timeline-item h4 {
+        color: #4e342e;
+        font-weight: bold;
+      }
+      .timeline-item p {
+        background: rgba(255, 255, 255, 0.9);
+        padding: 15px;
+        border-radius: 10px;
+        box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+      }
+      .timeline-item .icon {
+        font-size: 30px;
+        color: #4e342e;
+        margin-bottom: 10px;
+      }
+      @media screen and (max-width: 768px) {
+        .timeline::after {
+          left: 20px;
+        }
+        .timeline-item {
+          width: 100%;
+          padding-left: 50px;
+          padding-right: 25px;
+        }
+        .timeline-item.right {
+          left: 0;
+        }
+        .timeline-item::before {
+          left: 15px;
+        }
+      }
     </style>
   </head>
   <body>
@@ -164,11 +238,11 @@ section {
           <div class="col-md-6" data-aos="fade-left">
             <h2>Tentang Batik</h2>
             <p>
-             Batik memiliki sejarah yang panjang di Indonesia, dan proses pembuatannya dapat ditelusuri sejak zaman Kerajaan Majapahit (sekitar abad ke-13). Pada masa itu, batik awalnya hanya digunakan oleh kalangan istana dan bangsawan sebagai simbol status sosial. Motif-motif tertentu seperti motif "parang" atau "lereng" bahkan dikhususkan untuk keluarga kerajaan. Seiring berjalannya waktu, batik mulai menyebar ke kalangan masyarakat umum dan menjadi bagian integral dari budaya Indonesia.
-
-Pada abad ke-19, batik mulai diperkenalkan ke luar negeri oleh pedagang Belanda, terutama setelah berdirinya kota-kota pelabuhan seperti Batavia (Jakarta), Solo, dan Yogyakarta sebagai pusat batik di Jawa. Keindahan dan kerumitan batik menarik perhatian masyarakat internasional, dan batik pun menjadi salah satu ikon budaya Indonesia yang terkenal di dunia.
-
-Pada tahun 2009, UNESCO menetapkan batik Indonesia sebagai "Warisan Kemanusiaan untuk Budaya Lisan dan Nonbendawi." Pengakuan ini mengukuhkan batik sebagai warisan budaya yang perlu dilestarikan dan dikembangkan.
+              Batik memiliki sejarah yang panjang di Indonesia, dan proses pembuatannya dapat ditelusuri sejak zaman Kerajaan Majapahit (sekitar abad ke-13). Pada masa itu, batik awalnya hanya digunakan oleh kalangan istana dan bangsawan
+              sebagai simbol status sosial. Motif-motif tertentu seperti motif "parang" atau "lereng" bahkan dikhususkan untuk keluarga kerajaan. Seiring berjalannya waktu, batik mulai menyebar ke kalangan masyarakat umum dan menjadi bagian
+              integral dari budaya Indonesia. Pada abad ke-19, batik mulai diperkenalkan ke luar negeri oleh pedagang Belanda, terutama setelah berdirinya kota-kota pelabuhan seperti Batavia (Jakarta), Solo, dan Yogyakarta sebagai pusat
+              batik di Jawa. Keindahan dan kerumitan batik menarik perhatian masyarakat internasional, dan batik pun menjadi salah satu ikon budaya Indonesia yang terkenal di dunia. Pada tahun 2009, UNESCO menetapkan batik Indonesia sebagai
+              "Warisan Kemanusiaan untuk Budaya Lisan dan Nonbendawi." Pengakuan ini mengukuhkan batik sebagai warisan budaya yang perlu dilestarikan dan dikembangkan.
             </p>
             <p>
               Batik adalah sebuah teknik, simbol, dan kebudayaan terkait teknik mewarnai kain katun dan sutra dengan tangan (hand-dyed) yang berasal dari Indonesia1. Teknik batik meliputi proses pewarnaan kain dengan menggunakan malam
@@ -215,14 +289,10 @@ Pada tahun 2009, UNESCO menetapkan batik Indonesia sebagai "Warisan Kemanusiaan 
               <img src="batik durian pecah.jpg" class="card-img-top" alt="Batik Durian Pecah" />
               <div class="card-body">
                 <h5 class="card-title">Batik Durian Pecah</h5>
-                <p class="card-text">
-                  <strong>Asal:</strong> Sumatera / Jambi.<br /><strong>Ciri:</strong> menggambarkan buah durian yang terbelah dua, bertautan di pangkal tangkainya.
-                </p>
+                <p class="card-text"><strong>Asal:</strong> Sumatera / Jambi.<br /><strong>Ciri:</strong> menggambarkan buah durian yang terbelah dua, bertautan di pangkal tangkainya.</p>
               </div>
             </div>
           </div>
-
-          
 
           <div class="col-md-4 mb-3">
             <div class="card h-100">
@@ -230,7 +300,8 @@ Pada tahun 2009, UNESCO menetapkan batik Indonesia sebagai "Warisan Kemanusiaan 
               <div class="card-body">
                 <h5 class="card-title">Batik Kraton</h5>
                 <p class="card-text">
-                  <strong>Asal:</strong> Jawa Tengah / Yogyakarta.<br /><strong>Ciri:</strong> meliputi motif geometris yang sarat filosofi dan makna mendalam, warna dominan cokelat, putih, dan hitam, serta penggunaan motif-motif khusus yang awalnya hanya boleh dikenakan oleh keluarga raja dan bangsawan. 
+                  <strong>Asal:</strong> Jawa Tengah / Yogyakarta.<br /><strong>Ciri:</strong> meliputi motif geometris yang sarat filosofi dan makna mendalam, warna dominan cokelat, putih, dan hitam, serta penggunaan motif-motif khusus
+                  yang awalnya hanya boleh dikenakan oleh keluarga raja dan bangsawan.
                 </p>
               </div>
             </div>
@@ -241,15 +312,11 @@ Pada tahun 2009, UNESCO menetapkan batik Indonesia sebagai "Warisan Kemanusiaan 
               <img src="batik lasem.jpg" class="card-img-top" alt="Batik Lasem" />
               <div class="card-body">
                 <h5 class="card-title">Batik Lasem</h5>
-                <p class="card-text">
-                  <strong>Asal:</strong> Jawa Tengah / Rembang.<br /><strong>Ciri:</strong>  dominasi warna-warna cerah seperti merah, biru, hijau botol, dan soga (cokelat).
+                <p class="card-text"><strong>Asal:</strong> Jawa Tengah / Rembang.<br /><strong>Ciri:</strong> dominasi warna-warna cerah seperti merah, biru, hijau botol, dan soga (cokelat).</p>
               </div>
             </div>
           </div>
 
-          
-
-    
           <div class="col-md-4 mb-3">
             <div class="card h-100">
               <img src="Batik pattern 3 Mega Mendung.jpg" class="card-img-top" alt="Batik Mega Mendung" />
@@ -264,32 +331,122 @@ Pada tahun 2009, UNESCO menetapkan batik Indonesia sebagai "Warisan Kemanusiaan 
     </section>
 
     <!-- Sejarah -->
-    <section id="sejarah" class="py-5">
+    <section id="sejarah" class="py-5 bg-light">
       <div class="container" data-aos="fade-up">
-        <h2>Sejarah Batik</h2>
-        <p>
-          Sejarah Batik Indonesia terkait erat dengan perkembangan Kerajaan Majapahit dan penyebaran ajaran Islam di Pulau Jawa. Dalam beberapa catatan, pengembangan batik banyak dilakukan pada zaman Kesultanan Mataram, lalu berlanjut pada
-          zaman Kasunanan Surakarta dan Kesultanan Yogyakarta.[1] Keberadaan kegiatan Batik tertua berasal dari Raja yang masih bernama Wengker sebelum abad ke 7, Kerajaan di Jawa Tengah belajar batik dari Ponorogo. Karena itu, batik-batik
-          Ponorogo agak mirip dengan batik yang beredar di Jawa Tengah, hanya saja batik ponorogo batik yang dihasilkan rata-rata berwarna hitam pekat atau biasa disebut batik irengan karena yang dekat dengan unsur-unsur magis, sehinggga
-          dikembangkan oleh kerajaan - kerajaan di Jawa Tengah.[2] Di kerajaan Majapahit, Bangsawan Wengker menempati keraton ri Wengker dekat istana Wilwatikta Majapahit, Sehingga pengaruh batik Wengker dikembangkan pula oleh Kerajaan.
-          Pada abad 15 di desa Mirah, Joko Lancur anak dari lurah Golan memasuki rumah lurah Mirah ketika mencari Ayam Jagonya, terlihat Dewi Amirah sedang membatik. eksistensi Batik Ponorogo hingga abad 20 merupakan surga bagi para
-          pembatik, karena produksi batik di Ponorogo melampaui industri batik di Jawa Tengah maupun Yogyakarta yang kemudian diambil oleh pengepul batik dari Surakarta, Yogyakarta dan Pekalongan, selain itu upah pembatik di Ponorogo
-          tertinggi di Pulau Jawa.
-        </p>
-       
-       
+        <h2 class="text-center mb-4">Sejarah Batik Indonesia</h2>
+        <div class="row g-4">
+          <!-- Abad ke-7 -->
+          <div class="col-md-6">
+            <div class="card h-100 shadow-sm d-flex flex-row">
+              <img src="Batik1.jpg" class="img-fluid" alt="Batik Ponorogo" style="width: 160px; object-fit: cover" />
+              <div class="card-body">
+                <h5 class="card-title">Abad ke-7</h5>
+                <p class="card-text">Batik diyakini sudah ada sejak kerajaan awal di Jawa. Motif sederhana dan warna gelap dipakai dalam upacara adat. Batik Ponorogo dengan “irengan” bahkan dipercaya punya kekuatan magis.</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Abad ke-13 -->
+          <div class="col-md-6">
+            <div class="card h-100 shadow-sm d-flex flex-row">
+              <img src="batik2.jpeg" class="img-fluid" alt="Batik Majapahit" style="width: 160px; object-fit: cover" />
+              <div class="card-body">
+                <h5 class="card-title">Abad ke-13</h5>
+                <p class="card-text">Pada masa Kerajaan Majapahit, batik makin berkembang. Motifnya terinspirasi dari alam seperti bunga dan hewan, dan dipakai baik oleh rakyat maupun keluarga kerajaan.</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Abad ke-15 -->
+          <div class="col-md-6">
+            <div class="card h-100 shadow-sm d-flex flex-row">
+              <img src="batik3.jpg" class="img-fluid" alt="Batik Mataram" style="width: 160px; object-fit: cover" />
+              <div class="card-body">
+                <h5 class="card-title">Abad ke-15</h5>
+                <p class="card-text">Pengaruh Islam memperkaya batik, khususnya di Kesultanan Mataram. Motif sarat filosofi doa, harapan, dan simbol kehidupan. Beberapa motif khusus hanya untuk raja.</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Abad ke-19 -->
+          <div class="col-md-6">
+            <div class="card h-100 shadow-sm d-flex flex-row">
+              <img src="batik4.jpg" class="img-fluid" alt="Batik Pekalongan" style="width: 160px; object-fit: cover" />
+              <div class="card-body">
+                <h5 class="card-title">Abad ke-19</h5>
+                <p class="card-text">Era perdagangan & kolonial Belanda mengenalkan batik cap yang lebih cepat diproduksi. Pekalongan, Solo, dan Yogyakarta jadi pusat batik dengan gaya masing-masing.</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Tahun 2009 -->
+          <div class="col-12">
+            <div class="card h-100 shadow-sm d-flex flex-row">
+              <img src="batik5.jpg" class="img-fluid" alt="Batik UNESCO" style="width: 160px; object-fit: cover" />
+              <div class="card-body">
+                <h5 class="card-title">Tahun 2009</h5>
+                <p class="card-text">UNESCO menetapkan batik Indonesia sebagai Warisan Kemanusiaan untuk Budaya Lisan dan Nonbendawi. Sejak itu, 2 Oktober diperingati sebagai Hari Batik Nasional.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
     </section>
 
     <!-- Cerita / Filosofi -->
     <section id="filosofi" class="py-5 bg-light">
       <div class="container" data-aos="fade-up">
-        <h2>Cerita & Filosofi Motif</h2>
-        <ul>
-          <li><strong>Kawung:</strong> Simbol keseimbangan dan kesucian. Motif ini sering dipakai untuk menandai kedudukan istimewa.</li>
-          <li><strong>Parang:</strong> Melambangkan keberanian, terus berjuang, dan kesinambungan generasi.</li>
-          <li><strong>Sogan:</strong> Melambangkan kebangsawanan dan upacara resmi — biasa dipakai oleh kelas ningrat.</li>
-          <li><strong>Motif Lokal Lainnya:</strong> Setiap daerah (Bali, Madura, Pekalongan, Cirebon, dsb.) punya motif khas yang merefleksikan alam dan cerita lokal.</li>
-        </ul>
+        <h2 class="mb-4 text-center">Cerita & Filosofi Motif Batik</h2>
+        <p class="text-center">Setiap motif batik punya cerita sendiri. Dari zaman kerajaan sampai sekarang, batik selalu jadi simbol kehidupan, harapan, dan doa yang dituangkan lewat pola di kain.</p>
+
+        <div class="row g-5 mt-4">
+          <!-- Sedapur -->
+          <div class="col-md-6 d-flex align-items-center">
+            <img src="batik sedapur.webp" class="img-fluid me-3" alt="Batik Sedapur" style="max-width: 150px; border-radius: 8px" />
+            <div>
+              <h5>Batik Sedapur (Magetan, Jawa Timur)</h5>
+              <p>Motif ini terinspirasi dari rumpun bambu. Filosofinya <em>persatuan</em> dan <em>keuletan</em>, kayak bambu yang tetap kuat walau diterpa angin.</p>
+            </div>
+          </div>
+
+          <!-- Parang -->
+          <div class="col-md-6 d-flex align-items-center flex-row-reverse">
+            <img src="batik parang.jpg" class="img-fluid ms-3" alt="Batik Parang" style="max-width: 150px; border-radius: 8px" />
+            <div>
+              <h5>Batik Parang</h5>
+              <p>Motif ini dulu khusus buat raja. Garis miringnya melambangkan <em>perjuangan tanpa henti</em> dan semangat pantang menyerah.</p>
+            </div>
+          </div>
+
+          <!-- Kawung -->
+          <div class="col-md-6 d-flex align-items-center">
+            <img src="batik kawung.jpg" class="img-fluid me-3" alt="Batik Kawung" style="max-width: 150px; border-radius: 8px" />
+            <div>
+              <h5>Batik Kawung</h5>
+              <p>Motif bulat kayak buah aren, melambangkan <em>kesucian</em> dan <em>keseimbangan hidup</em>. Hidup itu selalu berputar: kadang senang, kadang sedih.</p>
+            </div>
+          </div>
+
+          <!-- Mega Mendung -->
+          <div class="col-md-6 d-flex align-items-center flex-row-reverse">
+            <img src="Batik pattern 3 Mega Mendung.jpg" class="img-fluid ms-3" alt="Batik Mega Mendung" style="max-width: 150px; border-radius: 8px" />
+            <div>
+              <h5>Batik Mega Mendung (Cirebon)</h5>
+              <p>Motif awan berlapis ini maknanya <em>kesabaran dan ketenangan</em>. Awan itu adem, jadi ngajarin kita tetap tenang walau lagi banyak masalah.</p>
+            </div>
+          </div>
+
+          <!-- Lasem -->
+          <div class="col-md-6 d-flex align-items-center">
+            <img src="batik lasem.jpg" class="img-fluid me-3" alt="Batik Lasem" style="max-width: 150px; border-radius: 8px" />
+            <div>
+              <h5>Batik Lasem</h5>
+              <p>Motif ini terkenal dengan warna merah cerah. Filosofinya <em>keberanian</em> dan <em>semangat hidup</em>, bikin energi positif terus ngalir.</p>
+            </div>
+          </div>
+        </div>
+
+        <p class="mt-5 text-center">Jadi, batik itu bukan sekadar kain bercorak, tapi karya seni penuh makna yang diwariskan turun-temurun. Setiap kali kita pakai batik, sama aja kita bawa doa, harapan, dan cerita leluhur. ✨</p>
       </div>
     </section>
 
@@ -403,36 +560,33 @@ Pada tahun 2009, UNESCO menetapkan batik Indonesia sebagai "Warisan Kemanusiaan 
     </section>
 
     <!-- Kritik & Saran -->
-   <!-- Kritik & Saran -->
-<section id="kritik" class="py-5">
-  <div class="container">
-    <h2 class="text-center mb-4">Kritik & Saran</h2>
-    <div class="row justify-content-center">
-      <div class="col-md-6">
-        <form id="kritikForm">
-          <div class="mb-3">
-            <label for="nama" class="form-label">Nama</label>
-            <input type="text" class="form-control" id="nama" name="user_name" placeholder="Masukkan nama Anda" required />
+    <!-- Kritik & Saran -->
+    <section id="kritik" class="py-5">
+      <div class="container">
+        <h2 class="text-center mb-4">Kritik & Saran</h2>
+        <div class="row justify-content-center">
+          <div class="col-md-6">
+            <form id="kritikForm">
+              <div class="mb-3">
+                <label for="nama" class="form-label">Nama</label>
+                <input type="text" class="form-control" id="nama" name="user_name" placeholder="Masukkan nama Anda" required />
+              </div>
+              <div class="mb-3">
+                <label for="email" class="form-label">Email</label>
+                <input type="email" class="form-control" id="email" name="user_email" placeholder="Masukkan email Anda" required />
+              </div>
+              <div class="mb-3">
+                <label for="pesan" class="form-label">Kritik & Saran</label>
+                <textarea class="form-control" id="pesan" name="message" rows="3" placeholder="Tulis kritik atau saran Anda" required></textarea>
+              </div>
+              <button type="submit" class="btn btn-dark w-100">Kirim</button>
+            </form>
           </div>
-          <div class="mb-3">
-            <label for="email" class="form-label">Email</label>
-            <input type="email" class="form-control" id="email" name="user_email" placeholder="Masukkan email Anda" required />
-          </div>
-          <div class="mb-3">
-            <label for="pesan" class="form-label">Kritik & Saran</label>
-            <textarea class="form-control" id="pesan" name="message" rows="3" placeholder="Tulis kritik atau saran Anda" required></textarea>
-          </div>
-          <button type="submit" class="btn btn-dark w-100">Kirim</button>
-        </form>
+        </div>
       </div>
-    </div>
-  </div>
-</section>
+    </section>
 
-
-    
-
-       <!-- Bootstrap JS -->
+    <!-- Bootstrap JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
     <!-- AOS JS -->
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
@@ -444,79 +598,72 @@ Pada tahun 2009, UNESCO menetapkan batik Indonesia sebagai "Warisan Kemanusiaan 
       AOS.init();
 
       // Inisialisasi EmailJS
-      (function() {
+      (function () {
         emailjs.init("BNnL3JnQGB1GZjAKp"); // 👉 Ganti dengan Public Key kamu dari EmailJS
       })();
 
       // Event submit form
-      document.getElementById("kritikForm").addEventListener("submit", function(e) {
+      document.getElementById("kritikForm").addEventListener("submit", function (e) {
         e.preventDefault();
 
-        emailjs.sendForm("service_fgpkhrp", "template_jgipj3s", this)
-          .then(function(response) {
+        emailjs.sendForm("service_fgpkhrp", "template_jgipj3s", this).then(
+          function (response) {
             alert("✅ Pesan berhasil terkirim!");
             document.getElementById("kritikForm").reset();
-          }, function(error) {
+          },
+          function (error) {
             alert("❌ Gagal mengirim pesan: " + JSON.stringify(error));
-          });
+          }
+        );
       });
     </script>
     <script>
-  // Filter tombol galeri
-  const filterBtns = document.querySelectorAll(".filter-btns .btn");
-  const galleryItems = document.querySelectorAll(".gallery-item");
+      // Filter tombol galeri
+      const filterBtns = document.querySelectorAll(".filter-btns .btn");
+      const galleryItems = document.querySelectorAll(".gallery-item");
 
-  filterBtns.forEach(btn => {
-    btn.addEventListener("click", () => {
-      const filter = btn.getAttribute("data-filter");
+      filterBtns.forEach((btn) => {
+        btn.addEventListener("click", () => {
+          const filter = btn.getAttribute("data-filter");
 
-      galleryItems.forEach(item => {
-        const gender = item.getAttribute("data-gender");
-        const style = item.getAttribute("data-style");
+          galleryItems.forEach((item) => {
+            const gender = item.getAttribute("data-gender");
+            const style = item.getAttribute("data-style");
 
-        if (
-          filter === "all" ||
-          filter === gender ||
-          filter === style
-        ) {
-          item.classList.remove("hidden");
-        } else {
-          item.classList.add("hidden");
-        }
+            if (filter === "all" || filter === gender || filter === style) {
+              item.classList.remove("hidden");
+            } else {
+              item.classList.add("hidden");
+            }
+          });
+
+          // aktifkan tombol yang sedang dipilih
+          filterBtns.forEach((b) => b.classList.remove("active"));
+          btn.classList.add("active");
+        });
       });
 
-      // aktifkan tombol yang sedang dipilih
-      filterBtns.forEach(b => b.classList.remove("active"));
-      btn.classList.add("active");
-    });
-  });
+      // Modal preview gambar
+      document.querySelectorAll(".view-image").forEach((btn) => {
+        btn.addEventListener("click", function () {
+          const src = this.getAttribute("data-src");
+          document.getElementById("modalImg").src = src;
+          document.getElementById("downloadImg").href = src;
+          new bootstrap.Modal(document.getElementById("imgModal")).show();
+        });
+      });
+    </script>
 
-  // Modal preview gambar
-  document.querySelectorAll(".view-image").forEach(btn => {
-    btn.addEventListener("click", function () {
-      const src = this.getAttribute("data-src");
-      document.getElementById("modalImg").src = src;
-      document.getElementById("downloadImg").href = src;
-      new bootstrap.Modal(document.getElementById("imgModal")).show();
-    });
-  });
-</script>
+    <!-- Footer -->
+    <footer class="bg-dark text-white text-center py-4 mt-5">
+      <div class="container">
+        <p class="mb-1">Telp: (0341) 478195 (SMKN 5 Malang)</p>
+        <p class="mb-3">Lokasi: Jl. Terusan Ikan Piranha Atas No.50, Tunjungsekar, Kec. Lowokwaru, Kota Malang, Jawa Timur 65142</p>
 
-<!-- Footer -->
-<footer class="bg-dark text-white text-center py-4 mt-5">
-  <div class="container">
-    
-    <p class="mb-1">Telp:  (0341) 478195 (SMKN 5 Malang)</p>
-    <p class="mb-3">Lokasi: Jl. Terusan Ikan Piranha Atas No.50, Tunjungsekar, Kec. Lowokwaru, Kota Malang, Jawa Timur 65142</p>
-    
-    <div>
-      <a href="https://maps.app.goo.gl/CGtYM7TFaeBJgrLe8" target="_blank" class="btn btn-outline-light btn-sm">
-        📍 Lihat di Google Maps
-      </a>
-    </div>
-  </div>
-</footer>
-
+        <div>
+          <a href="https://maps.app.goo.gl/CGtYM7TFaeBJgrLe8" target="_blank" class="btn btn-outline-light btn-sm"> 📍 Lihat di Google Maps </a>
+        </div>
+      </div>
+    </footer>
   </body>
 </html>
-
